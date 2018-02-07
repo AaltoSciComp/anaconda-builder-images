@@ -4,7 +4,7 @@
 
 if [[ "$#" -eq 0 ]]; then 
   cd /build
-  python install.py
+  python -u install.py
   exit $?
 elif [[ "$1" == "lmod" ]]; then
   [[ -f /usr/share/lmod/5.8/init/bash ]] && . /usr/share/lmod/5.8/init/bash
