@@ -4,7 +4,9 @@ RUN yum install -y epel-release           \
   && yum update -y                        \
   && yum clean all
 
-RUN yum groupinstall -y "Development Tools" \
+RUN yum groups mark install "Development Tools" \
+  && yum groups mark convert "Development Tools" \
+  && yum groupinstall -y "Development Tools" \
   && yum clean all
 
 RUN yum update -y && yum install -y       \
